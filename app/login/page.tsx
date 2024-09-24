@@ -23,12 +23,12 @@ const Login = () => {
   };
   return (
     <div className="w-screen h-screen p-4 flex items-center justify-center">
-      <div className="m-auto">
+      <div className="m-auto w-full">
         <Form
           name="basic"
-          labelCol={{ span: 8 }}
-          wrapperCol={{ span: 16 }}
-          style={{ maxWidth: 600 }}
+          // labelCol={{ span: 8 }}
+          // wrapperCol={{ span: 16 }}
+          layout="vertical"
           initialValues={{}}
           onFinish={onFinish}
           onFinishFailed={onFinishFailed}
