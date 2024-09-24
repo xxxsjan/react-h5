@@ -2,7 +2,8 @@
 import React from "react";
 import type { FormProps } from "antd";
 import { Button, Checkbox, Form, Input } from "antd";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
+import useTitle from "../../hooks/useTitle";
 
 type FieldType = {
   username?: string;
@@ -13,11 +14,12 @@ const onFinishFailed: FormProps<FieldType>["onFinishFailed"] = (errorInfo) => {
   console.log("Failed:", errorInfo);
 };
 const Login = () => {
-  // const router = useRouter();
+  const router = useRouter();
+  useTitle("登录");
 
   const onFinish: FormProps<FieldType>["onFinish"] = (values) => {
     console.log("Success:", values);
-    // router.push("/");
+    router.push("/");
   };
   return (
     <div className="w-screen h-screen p-4 flex items-center justify-center">

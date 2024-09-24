@@ -1,8 +1,13 @@
+// "use client"
+
 import React from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import StyledComponentsRegistry from "./AntdRegistry";
+import Header from "@/components/Header";
+import TabBar from "@/components/TabBar";
 import "./globals.css";
+import { useRouter } from "next/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,10 +17,18 @@ export const metadata: Metadata = {
 };
 
 function RootLayout({ children }: React.PropsWithChildren) {
+  // const router = useRouter();
+  // console.log('router: ', router);
   return (
     <html lang="en">
       <body className={inter.className}>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        <StyledComponentsRegistry>
+          <Header></Header>
+          <div className="h-[calc(100vh-100px)] overflow-y-scroll">
+            {children}
+          </div>
+          <TabBar></TabBar>
+        </StyledComponentsRegistry>
       </body>
     </html>
   );
