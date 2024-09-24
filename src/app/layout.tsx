@@ -4,8 +4,8 @@ import React from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import StyledComponentsRegistry from "./AntdRegistry";
-import Header from "@/components/Header";
-import TabBar from "@/components/TabBar";
+import Header from "~/components/Header";
+import TabBar from "~/components/TabBar";
 import "./globals.css";
 import { useRouter } from "next/navigation";
 

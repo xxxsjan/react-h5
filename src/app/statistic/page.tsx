@@ -3,24 +3,7 @@
 import React from "react";
 import { Card, Tabs } from "antd";
 import Link from "next/link";
-import useTitle from "@/hooks/useTitle";
-// export const getServerSideProps = async (context) => {
-//   const { req } = context;
-//   // const user = await getUserFromSession(req); // 获取用户身份信息
-//   const user = {isAdmin:false}
-//   if (!user.isAdmin) {
-//     return {
-//       redirect: {
-//         destination: '/login',
-//         permanent: false,
-//       },
-//     };
-//   }
-
-//   return {
-//     props: { user },
-//   };
-// };
+import useTitle from "~/hooks/useTitle";
 
 export default function Statistic() {
   useTitle("统计");
@@ -28,7 +11,7 @@ export default function Statistic() {
     console.log(key);
   };
   return (
-    <div className="h-screen p-2 flex flex-col items-center">
+    <div className="h-screen p-4 flex flex-col items-center">
       <div className="w-full">
         <Tabs
           defaultActiveKey="1"
@@ -53,8 +36,6 @@ export default function Statistic() {
           </Card>
         </div>
       </div>
-
-      
     </div>
   );
 }

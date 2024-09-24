@@ -3,7 +3,7 @@
 import React from "react";
 import { Button, Form, Input } from "antd";
 import Link from "next/link";
-import useTitle from "../hooks/useTitle";
+import useTitle from "~/hooks/useTitle";
 
 const HomePage = () => {
   useTitle("首页");
