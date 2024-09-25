@@ -1,10 +1,9 @@
 "use client";
 import React from "react";
 import type { FormProps } from "antd";
-import { Button, Checkbox, Form, Input } from "antd";
+import { Button, Form, Input } from "antd";
 import { useRouter } from "next/navigation";
-import useTitle from "../../hooks/useTitle";
-import { Metadata } from "next";
+import useTitle from "~/hooks/useTitle";
 
 type FieldType = {
   username?: string;
@@ -17,11 +16,12 @@ const onFinishFailed: FormProps<FieldType>["onFinishFailed"] = (errorInfo) => {
 
 const Login = () => {
   const router = useRouter();
-  // useTitle("登录");
+  useTitle("登录");
 
   const onFinish: FormProps<FieldType>["onFinish"] = (values) => {
     console.log("Success:", values);
-    // router.push("/");
+    window.localStorage.setItem("token", "123456");
+    router.push("/");
   };
   return (
     <div className="w-screen h-screen p-4 flex items-center justify-center">

@@ -1,5 +1,5 @@
 {
-  "name": "report-data-h5",
+  "name": "ad-report-h5",
   "private": true,
   "scripts": {
     "dev": "next --port 3500",
