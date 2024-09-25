@@ -1,7 +1,8 @@
 {
+  "name": "report-data-h5",
   "private": true,
   "scripts": {
-    "dev": "next",
+    "dev": "next --port 3500",
     "build": "next build",
     "start": "next start"
   },
@@ -9,6 +10,7 @@
     "@ant-design/cssinjs": ">=1.21.0",
     "@ant-design/icons": "^5.1.4",
     "antd": "^5.0.0",
+    "axios": "^1.7.7",
     "next": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

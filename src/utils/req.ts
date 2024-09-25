@@ -26,8 +26,7 @@ instance.interceptors.response.use(
     if (error && error.response) {
       switch (error.response.status) {
         case 401:
-          // 客户端环境
-          window && (location.href = "/user/login");
+          window && (location.href = "/login");
         case 500:
           message.error(error.response.data.msg);
       }
