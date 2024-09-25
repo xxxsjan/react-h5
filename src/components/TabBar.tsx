@@ -6,16 +6,16 @@ export default function TabBar() {
   const pathname = usePathname();
   const tabs = [
     {
-      name: "统计页面",
-      path: "/statistic",
+      name: "上报",
+      path: "/",
     },
     {
-      name: "上报页面",
-      path: "/",
+      name: "统计",
+      path: "/statistic",
     },
   ];
   return (
-    <div className="w-full text-center text-lg h-12 leading-[48px] overflow-hidden flex">
+    <div className="w-full text-center text-lg h-12 leading-[48px] overflow-hidden flex bg-[#F9F9F9]">
       {tabs.map((tab) => {
         return (
           <div

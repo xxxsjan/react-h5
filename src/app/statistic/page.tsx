@@ -13,7 +13,7 @@ export default function Statistic() {
   };
   return (
     <Layout>
-      <div className="h-screen p-4 flex flex-col items-center">
+      <div className="h-screen px-8 py-6 flex flex-col items-center">
         <div className="w-full">
           <Tabs
             defaultActiveKey="1"
@@ -32,9 +32,8 @@ export default function Statistic() {
 
           <div className="min-h-[calc(100vh-100px)]">
             <Card className="w-full">
-              <p>Card content</p>
-              <p>Card content</p>
-              <p>Card content</p>
+              <p>2024年9月25日11:01:22</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In deleniti commodi, eum nobis pariatur, fugit aliquid veritatis est quibusdam dolorem deserunt praesentium error sed ipsam quisquam. Maxime adipisci est et.</p>
             </Card>
           </div>
         </div>

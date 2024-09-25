@@ -6,7 +6,7 @@ export default function Header() {
   useEffect(() => {
     setTitle(document.title)
   },[])
-  return <div className="w-full text-center text-lg font-bold h-12 leading-[48px] border-b">
+  return <div className="w-full text-center text-lg font-bold h-12 leading-[48px] border-b bg-[#F9F9F9]">
     {title}
   </div>
 }

@@ -4,6 +4,7 @@ import type { FormProps } from "antd";
 import { Button, Form, Input } from "antd";
 import { useRouter } from "next/navigation";
 import useTitle from "~/hooks/useTitle";
+import { LockOutlined, UserOutlined } from "@ant-design/icons";
 
 type FieldType = {
   username?: string;
@@ -24,7 +25,7 @@ const Login = () => {
     router.push("/");
   };
   return (
-    <div className="w-screen h-screen p-4 flex items-center justify-center">
+    <div className="w-screen h-screen px-8 py-6 flex items-center justify-center">
       <div className="m-auto w-full">
         <Form
           name="basic"
@@ -35,26 +36,32 @@ const Login = () => {
           autoComplete="off"
         >
           <Form.Item<FieldType>
-            label="账号"
+            label=""
             name="username"
             rules={[{ required: true, message: "请输入账号" }]}
           >
-            <Input />
+            <Input
+              size="large"
+              prefix={<UserOutlined />}
+              placeholder="用户名"
+            />
           </Form.Item>
 
           <Form.Item<FieldType>
-            label="密码"
+            label=""
             name="password"
             rules={[{ required: true, message: "请输入密码" }]}
           >
-            <Input.Password />
+            <Input.Password
+              size="large"
+              prefix={<LockOutlined />}
+              placeholder="密码"
+            />
           </Form.Item>
 
-          <Form.Item className="justify-center flex">
-            <Button type="primary" htmlType="submit">
-              登录
-            </Button>
-          </Form.Item>
+          <Button type="primary" htmlType="submit" block size="large">
+            登录
+          </Button>
         </Form>
       </div>
     </div>

@@ -10,3 +10,13 @@ body {
   padding: 0;
   margin: 0;
 }
+
+.acss-trkbkn {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: auto;
+  background-image: url('/bg.png');
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
