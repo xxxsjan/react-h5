@@ -1,8 +1,11 @@
 import React from "react";
 import Header from "~/components/Header";
 import TabBar from "~/components/TabBar";
+import useAuth from "~/hooks/useAuth";
 
 function Layout({ children }: React.PropsWithChildren) {
+  useAuth()
+
   return (
     <div className="bg-gradient-to-b from-white via-[#f5f5f5] via-28%">
       <Header></Header>
