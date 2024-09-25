@@ -6,7 +6,7 @@ function Layout({ children }: React.PropsWithChildren) {
   return (
     <div className="bg-gradient-to-b from-white via-[#f5f5f5] via-28%">
       <Header></Header>
-      <div className="h-[calc(100vh-100px)] overflow-y-scroll">{children}</div>
+      <div className="h-[calc(100vh-98px)] overflow-y-scroll">{children}</div>
       <TabBar></TabBar>
     </div>
   );

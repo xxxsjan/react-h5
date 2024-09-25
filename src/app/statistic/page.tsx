@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Card, Tabs } from "antd";
 import Link from "next/link";
 import useTitle from "~/hooks/useTitle";
@@ -8,34 +8,64 @@ import Layout from "~/components/Layout";
 
 export default function Statistic() {
   useTitle("统计");
+  const [listData, setListData] = useState<any[]>([]);
   const onChange = (key: string) => {
     console.log(key);
+    getData();
   };
+  const getData = () => {
+    setListData([
+      {
+        id: 1,
+        url: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Indeleniti commodi, eum nobis pariatur, fugit aliquid veritatisest quibusdam dolorem deserunt praesentium error sed ipsamquisquam. Maxime adipisci est et.`,
+        time: Date.now(),
+      },
+      {
+        id: 2,
+        url: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Indeleniti commodi, eum nobis pariatur, fugit aliquid veritatisest quibusdam dolorem deserunt praesentium error sed ipsamquisquam. Maxime adipisci est et.`,
+        time: Date.now(),
+      },
+      {
+        id: 3,
+        url: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Indeleniti commodi, eum nobis pariatur, fugit aliquid veritatisest quibusdam dolorem deserunt praesentium error sed ipsamquisquam. Maxime adipisci est et.`,
+        time: Date.now(),
+      },
+      {
+        id: 4,
+        url: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Indeleniti commodi, eum nobis pariatur, fugit aliquid veritatisest quibusdam dolorem deserunt praesentium error sed ipsamquisquam. Maxime adipisci est et.`,
+        time: Date.now(),
+      }
+    ]);
+  };
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
     <Layout>
-      <div className="h-screen px-8 py-6 flex flex-col items-center">
-        <div className="w-full">
-          <Tabs
-            defaultActiveKey="1"
-            items={[
-              {
-                key: "1",
-                label: "今日",
-              },
-              {
-                key: "2",
-                label: "昨日",
-              },
-            ]}
-            onChange={onChange}
-          />
+      <div className="h-full w-full px-8 flex flex-col items-center">
+        <Tabs
+          defaultActiveKey="1"
+          items={[
+            {
+              key: "1",
+              label: "今日",
+            },
+            {
+              key: "2",
+              label: "昨日",
+            },
+          ]}
+          onChange={onChange}
+        />
 
-          <div className="min-h-[calc(100vh-100px)]">
-            <Card className="w-full">
-              <p>2024年9月25日11:01:22</p>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In deleniti commodi, eum nobis pariatur, fugit aliquid veritatis est quibusdam dolorem deserunt praesentium error sed ipsam quisquam. Maxime adipisci est et.</p>
+        <div className="">
+          {listData.map((item) => (
+            <Card className="w-full mb-2" key={item.id}>
+              <p>{item.time}</p>
+              <p>{item.url}</p>
             </Card>
-          </div>
+          ))}
         </div>
       </div>
     </Layout>

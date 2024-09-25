@@ -26,7 +26,7 @@ function withAuth(Component: any) {
 }
 
 const HomePage = () => {
-  useTitle("首页");
+  useTitle("上报");
   const onFinish = (values: any) => {
     console.log(values);
   };
@@ -37,7 +37,7 @@ const HomePage = () => {
           <Card className="w-full">
             <Form layout="vertical" name="nest-messages" onFinish={onFinish}>
               <Form.Item name={"url"} label="链接">
-                <Input.TextArea placeholder="请输入链接" rows={8} />
+                <Input.TextArea placeholder="请输入链接" rows={15} />
               </Form.Item>
               <Button type="primary" htmlType="submit" block size="large">
                 上报

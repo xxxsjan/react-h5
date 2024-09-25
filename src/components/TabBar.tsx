@@ -20,7 +20,7 @@ export default function TabBar() {
         return (
           <div
             key={tab.name}
-            className={`flex-1 ${pathname == tab.path ? "font-semibold" : ""}`}
+            className={`flex-1 ${pathname == tab.path ? "font-semibold" : ""} `}
           >
             <Link href={tab.path}>{tab.name}</Link>
           </div>
