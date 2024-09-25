@@ -4,6 +4,7 @@ import type { FormProps } from "antd";
 import { Button, Checkbox, Form, Input } from "antd";
 import { useRouter } from "next/navigation";
 import useTitle from "../../hooks/useTitle";
+import { Metadata } from "next";
 
 type FieldType = {
   username?: string;
@@ -13,13 +14,14 @@ type FieldType = {
 const onFinishFailed: FormProps<FieldType>["onFinishFailed"] = (errorInfo) => {
   console.log("Failed:", errorInfo);
 };
+
 const Login = () => {
   const router = useRouter();
-  useTitle("登录");
+  // useTitle("登录");
 
   const onFinish: FormProps<FieldType>["onFinish"] = (values) => {
     console.log("Success:", values);
-    router.push("/");
+    // router.push("/");
   };
   return (
     <div className="w-screen h-screen p-4 flex items-center justify-center">
@@ -35,7 +37,7 @@ const Login = () => {
           <Form.Item<FieldType>
             label="账号"
             name="username"
-            rules={[{ required: true, message: "Please input your username!" }]}
+            rules={[{ required: true, message: "请输入账号" }]}
           >
             <Input />
           </Form.Item>
@@ -43,7 +45,7 @@ const Login = () => {
           <Form.Item<FieldType>
             label="密码"
             name="password"
-            rules={[{ required: true, message: "Please input your password!" }]}
+            rules={[{ required: true, message: "请输入密码" }]}
           >
             <Input.Password />
           </Form.Item>

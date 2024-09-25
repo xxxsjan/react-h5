@@ -4,6 +4,7 @@ import React from "react";
 import { Card, Tabs } from "antd";
 import Link from "next/link";
 import useTitle from "~/hooks/useTitle";
+import Layout from "~/components/Layout";
 
 export default function Statistic() {
   useTitle("统计");
@@ -11,31 +12,33 @@ export default function Statistic() {
     console.log(key);
   };
   return (
-    <div className="h-screen p-4 flex flex-col items-center">
-      <div className="w-full">
-        <Tabs
-          defaultActiveKey="1"
-          items={[
-            {
-              key: "1",
-              label: "今日",
-            },
-            {
-              key: "2",
-              label: "昨日",
-            },
-          ]}
-          onChange={onChange}
-        />
+    <Layout>
+      <div className="h-screen p-4 flex flex-col items-center">
+        <div className="w-full">
+          <Tabs
+            defaultActiveKey="1"
+            items={[
+              {
+                key: "1",
+                label: "今日",
+              },
+              {
+                key: "2",
+                label: "昨日",
+              },
+            ]}
+            onChange={onChange}
+          />
 
-        <div className="min-h-[calc(100vh-100px)]">
-          <Card className="w-full">
-            <p>Card content</p>
-            <p>Card content</p>
-            <p>Card content</p>
-          </Card>
+          <div className="min-h-[calc(100vh-100px)]">
+            <Card className="w-full">
+              <p>Card content</p>
+              <p>Card content</p>
+              <p>Card content</p>
+            </Card>
+          </div>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 }
